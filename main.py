@@ -10,20 +10,18 @@ def borrado(request_id):
     endpoint = '/api/v3/requests'
     url = app_url + '/api/v3/requests/'+ request_id + '/move_to_trash'
     response = requests.delete(url,headers=headers,verify=False)
-    #print(response.text)
     return
 def creacion(input_data,headers,app_url):
     endpoint = '/api/v3/requests'
     url = app_url + endpoint
     data = {'input_data': input_data}
-    #print(data)
     response = requests.post(url,headers=headers,data=data,verify=False)
-    #print(response.text)
 
 def lectura():
     #procesamiento de archivo
-    #file_path = sys.argv[1]
-    file_path = os.getcwd()+"/Salida.json"
+    file_path = sys.argv[1]
+    #para realizar pruebas locales
+    #file_path = os.getcwd()+"/Salida.json"
     requestObj = read_file(file_path,"request")
     #print(requestObj)
     return requestObj
@@ -62,22 +60,11 @@ def template(requestObj):
     	template = "Request a new email account creation"
     elif ("request for a mail list" in subject):
     	template="Request a new mailing list creation"
-    #print(template)
     return template
 
-def main():
+if __name__ == '__main__':
     requestObj=lectura()
-    #print(requestObj)
-    #print(subject)
     template_name=template(requestObj)
-    #print(template_name)``
-    #print(template)
     dataObj=construyedata(template_name,requestObj)
-    #print(dataObj)
-    #creacion(dataObj,headers,app_url)
     request_delete=requestObj['id']
-    #print(request_delete)
-    #borrado(request_delete)
     print('fin')
-
-main()
