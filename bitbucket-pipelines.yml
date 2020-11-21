@@ -4,11 +4,6 @@ pipelines:
   default:
     - step:
         script:
-<<<<<<< HEAD
-          - git push --mirror git@github.com:https://github.com/agrega-dev/Convertir_Incidente_a_Servicio.git
+          - git push --mirror git@github.com:/agrega-dev/Convertir_Incidente_a_Servicio.git
             variables:
-              EXTRA_ARGS: '--exclude=YOUR_DESIRE_FOLDER_PATH/*'
-=======
-          - git push --mirror git@github.com:agrega-dev/Convertir_Incidente_a_Servicio.git
-          
->>>>>>> 2a0d59dbac9b41f5e40e4e577b6dd80c86e15b76
+              EXTRA_ARGS: '--exclude=.gitignore'
