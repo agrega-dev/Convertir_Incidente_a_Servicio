@@ -27,6 +27,7 @@ def lectura():
     requestObj = read_file(file_path,"request")
     #print(requestObj)
     return requestObj
+#funcon para leer archivo
 def read_file(file_Path, key=None):
     with open(file_Path,encoding='utf-8') as data_file:
         data = json.load(data_file)
