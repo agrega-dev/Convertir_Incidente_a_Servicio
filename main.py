@@ -6,17 +6,19 @@ import os
 headers = {"technician_key":"1996B81F-C8A0-4C7A-8EE8-9EFFD7FEEBF5"}
 app_url = 'http://localhost:8085'
 
+#funciona para borrado de ticket
 def borrado(request_id):
     endpoint = '/api/v3/requests'
     url = app_url + '/api/v3/requests/'+ request_id + '/move_to_trash'
     response = requests.delete(url,headers=headers,verify=False)
     return
+#funcion para crear ticket
 def creacion(input_data,headers,app_url):
     endpoint = '/api/v3/requests'
     url = app_url + endpoint
     data = {'input_data': input_data}
     response = requests.post(url,headers=headers,data=data,verify=False)
-
+#lectura de json
 def lectura():
     #procesamiento de archivo
     file_path = sys.argv[1]
@@ -38,6 +40,7 @@ def read_file(file_Path, key=None):
 def construyejson(data):
     json_data = ''' {"request": ''' + data + '''}'''
     return json_data
+#funcion para construir la data de nuevo ticket
 def construyedata(template,requestObj):
     reqObj={}
     reqObj['requester']=requestObj['requester']
@@ -50,6 +53,7 @@ def construyedata(template,requestObj):
     json_data = construyejson(reqObj)
     print(json_data)
     return json_data
+#funcion para asociar subject con template en catalogo de servicio
 def template(requestObj):
     subject = requestObj['subject']
     #print(subject)
