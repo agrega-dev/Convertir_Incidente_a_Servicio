@@ -1,13 +1,11 @@
-#H1
-Introduccion
+# Introduccion
 
 La mesa de ayuda SDP permite crear tickets por correo electronico, al crear el ticket este se crea como incidente, existe el caso que el ticket lo necesitamos como solicitud de servicio.
 Para lograr esto en SDP usamos la funcionalidad de custom script y script hecho en python.
 
 Este ejemplo contiene el codigo de script de python que permite hacer este proceso.
 
-#H2
-Configuracion
+## Configuracion
 
 Parametros de acceso
 URL de SDP en linea 7
@@ -33,7 +31,6 @@ def template(requestObj):
 En este ejemplo en linea el contenido "place" asigna template = "Request a CRM account"
 
 
-#h2
-ToDO
+# ToDO
 
 En proxima version se separar en un json los mapeos de subject => templates
