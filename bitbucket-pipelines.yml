@@ -4,5 +4,5 @@ pipelines:
   default:
     - step:
         script:
-          - git push --mirror git@github.com:https://github.com/agrega-dev/Convertir_Incidente_a_Servicio.git
+          - git push --mirror git@github.com:agrega-dev/Convertir_Incidente_a_Servicio.git
           
